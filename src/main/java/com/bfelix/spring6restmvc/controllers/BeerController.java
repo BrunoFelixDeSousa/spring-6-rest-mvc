@@ -67,8 +67,6 @@ public class BeerController {
     @RequestMapping(BEER_PATH_ID)
     public BeerDTO getBeerById(@PathVariable("beerId") UUID beerId){
 
-        log.debug("Get BeerDTO by Id - in controller");
-
         return beerService.getBeerById(beerId).orElseThrow(NotFoundException::new);
     }
 }
